@@ -1,10 +1,12 @@
 header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 12.5% 22.5% 30% 22.5% 12.5%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        ". menu logo restart .";
     align-items: center;
 
-    width: 50%;
-    margin: 100px auto;
+    margin: 50px 0px;
 }
 
 header button {
@@ -14,7 +16,7 @@ header button {
     padding: 10px 25px;
   
     border: 0;
-    border-radius: 50px;
+    border-radius: var(--border-radius);
   
     background-color: var(--dark-bg);
     border: 5px solid transparent;
@@ -23,19 +25,34 @@ header button {
   
 header button:hover {
     cursor: pointer;
-    border: 5px solid var(--border);
-    box-shadow: 0px 5px var(--border);
+    border: var(--border);
+    box-shadow: var(--border-shadow);
 }
-  
+
+header button:first-child {
+    grid-area: menu;
+    justify-self: end;
+    margin-right: 100px;
+}
+
 header button:first-child:hover {
     background-color: var(--red-player);
 }
-  
+
+header button:last-child {
+    grid-area: restart;
+    justify-self: start;
+    margin-left: 100px;
+}
+
 header button:last-child:hover {
     background-color: var(--yellow-player);
 }
 
 header .logo {
+    grid-area: logo;
+    justify-self: center;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -48,16 +65,8 @@ header .logo div {
     aspect-ratio: 1;
 
     border-radius: 50%;
-    border: 5px solid var(--border);
-    box-shadow: 0px 5px var(--border);
-}
-
-header .logo .red {
-    background-color: var(--red-player);
-}
-
-header .logo .yellow {
-    background-color: var(--yellow-player);
+    border: var(--border);
+    box-shadow: 0px 5px black;
 }
 
 

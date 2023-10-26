@@ -1,0 +1,50 @@
+.player {
+    background-color: var(--text);
+    border-radius: var(--border-radius);
+    border: var(--border);
+    box-shadow: var(--border-shadow);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 75px 50px 50px 50px;
+    margin: 100px;
+}
+
+.player.one {
+    grid-area: playerone;
+}
+
+.player.two {
+    grid-area: playertwo;
+}
+
+.smiley {
+    position: absolute;
+    top: -50px;
+    width: 100px;
+    aspect-ratio: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    border: var(--border);
+    box-shadow: 0px 10px black;
+}
+
+.smiley img {
+    width: 75px;
+}
+
+.red {
+    background-color: var(--red-player);
+}
+
+.yellow {
+    background-color: var(--yellow-player);
+}

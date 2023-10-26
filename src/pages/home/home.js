@@ -1,7 +1,8 @@
+import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import Playboard from "../../components/playboard/playboard";
-import PlayerOne from "../../components/playerone/playerone";
-import PlayerTwo from "../../components/playertwo/playertwo";
+import PlayerOne from "../../components/player/playerone";
+import PlayerTwo from "../../components/player/playertwo";
 import "./home.css";
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
         <Playboard />
         <PlayerTwo />
       </main>
+      <Footer />
     </>
   );
 }

@@ -3,8 +3,26 @@
   --dark-bg: #5c2dd8;
   --red-player: #ff658a;
   --yellow-player: #feca65;
-  --border: black;
   --text: white;
+
+  --border: 5px solid black;
+  --border-shadow: 0px 15px black;
+  --border-radius: 2rem;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 0.8;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 10px 0 10px 0;
 }
 
 button {
@@ -32,5 +50,13 @@ button:first-child:hover {
 }
 
 button:last-child:hover {
+  background-color: var(--yellow-player);
+}
+
+.red {
+  background-color: var(--red-player);
+}
+
+.yellow {
   background-color: var(--yellow-player);
 }

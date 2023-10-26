@@ -1,3 +1,26 @@
 .playboard {
     grid-area: board;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+
+    background-color: var(--text);
+    border-radius: var(--border-radius);
+    border: var(--border);
+    box-shadow: var(--border-shadow);
+
+    padding: 25px 25px 100px 25px;
+}
+
+.hole {
+    width: calc(100% - 10px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--bg);
+
+    border: var(--border);
+    box-shadow: inset 0px 10px black;
 }
