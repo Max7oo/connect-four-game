@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import Playboard from "../../components/playboard/playboard";
@@ -6,13 +7,15 @@ import PlayerTwo from "../../components/player/playertwo";
 import "./home.css";
 
 function Home() {
+  const [player, setPlayer] = useState(1);
+
   return (
     <>
       <Header />
       <main>
-        <PlayerOne />
-        <Playboard />
-        <PlayerTwo />
+        <PlayerOne setPlayer={setPlayer} />
+        <Playboard player={player} setPlayer={setPlayer} />
+        <PlayerTwo setPlayer={setPlayer} />
       </main>
       <Footer />
     </>
