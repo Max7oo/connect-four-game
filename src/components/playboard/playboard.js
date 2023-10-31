@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./playboard.css";
 
 function Playboard({ player, setPlayer }) {
@@ -25,13 +25,13 @@ function Playboard({ player, setPlayer }) {
     for (let i = 0; i < boardMemory[column].length; i++) {
       if (boardMemory[column][boardMemory[column].length - 1] === 0) {
         boardMemory[column][boardMemory[column].length - 1] = player;
-        colorHole(player, column, boardMemory[column].length - i - 1);
+        chipAdded(player, column, boardMemory[column].length - i - 1);
         player === 1 ? setPlayer(2) : setPlayer(1);
         console.log(boardMemory[column]);
         return boardMemory;
       } else if (boardMemory[column][i] === 1 || boardMemory[column][i] === 2) {
         boardMemory[column][i - 1] = player;
-        colorHole(player, column, i - 1);
+        chipAdded(player, column, i - 1);
         player === 1 ? setPlayer(2) : setPlayer(1);
         console.log(boardMemory[column]);
         return boardMemory;
@@ -39,7 +39,7 @@ function Playboard({ player, setPlayer }) {
     }
   };
 
-  const colorHole = (player, column, index) => {
+  const chipAdded = (player, column, index) => {
     if (index >= 0) {
       if (player === 1) {
         let indexToChange = column + index * 7;
@@ -56,6 +56,44 @@ function Playboard({ player, setPlayer }) {
     }
   };
 
+  useEffect(() => {
+    hasFourInARow(player);
+  });
+
+  function hasFourInARow(player) {
+    if (player === 1) {
+      boardMemory.forEach((arr) => {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === 1) {
+            count++;
+            if (count === 4) {
+              console.log("Player " + player + " wins");
+            }
+          } else {
+            count = 0;
+          }
+        }
+        return false;
+      });
+    } else if (player === 2) {
+      boardMemory.forEach((arr) => {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === 2) {
+            count++;
+            if (count === 4) {
+              console.log("Player " + player + " wins");
+            }
+          } else {
+            count = 0;
+          }
+        }
+        return false;
+      });
+    }
+  }
+
   return (
     <div className="playboard">
       {createBoardCells().map((_, index) => {
@@ -63,7 +101,7 @@ function Playboard({ player, setPlayer }) {
           <div
             key={index}
             id={index}
-            className="hole"
+            className="cell"
             onClick={() => handlePlayerMove(player, index % 7)}
           ></div>
         );

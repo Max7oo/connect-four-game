@@ -15,7 +15,7 @@
     padding: 25px 25px 100px 25px;
 }
 
-.hole {
+.cell {
     width: calc(100% - 10px);
     aspect-ratio: 1;
     border-radius: 50%;
