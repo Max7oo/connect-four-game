@@ -1,10 +1,9 @@
 footer {
     display: flex;
     justify-content: center;
-    align-items: top;
 
     background-color: var(--dark-bg);
-    border-radius: var(--border-radius) 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 
     margin-top: -75px;
 
@@ -13,18 +12,25 @@ footer {
 }
 
 .turn {
-    background-image: url(
-        "../../images/red-bg.svg"
-    );
+    z-index: 3;
+    
     background-repeat: no-repeat;
     background-size: contain;
-    /* background-color: var(--red-player);
-    border-radius: 50px;
-    border: 5px solid var(--border);
-    box-shadow: 0px 10px var(--border); */
 
     text-align: center;
     color: var(--text);
 
     padding: 50px 50px 50px 50px;
+}
+
+.turn.one {
+    background-image: url(
+        "../../images/red-bg.svg"
+    );
+}
+
+.turn.two {
+    background-image: url(
+        "../../images/yellow-bg.svg"
+    );
 }

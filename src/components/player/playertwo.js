@@ -2,7 +2,7 @@ import "./player.css";
 
 import yellow from "../../images/yellow-smiley.svg";
 
-function PlayerTwo({ setPlayer }) {
+function PlayerTwo({ setPlayer, scoreTwo }) {
   return (
     <div className="player two" onClick={() => setPlayer(2)}>
       <div className="smiley yellow">
@@ -10,7 +10,7 @@ function PlayerTwo({ setPlayer }) {
       </div>
       <div className="player-info">
         <h2>PLAYER 2</h2>
-        <h1>0</h1>
+        <h1>{scoreTwo}</h1>
       </div>
     </div>
   );

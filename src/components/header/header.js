@@ -1,6 +1,23 @@
 import "./header.css";
 
-function Header() {
+function Header({ setBoardMemory, setSeconds }) {
+  const resetBoard = () => {
+    setBoardMemory([
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+    ]);
+
+    setSeconds(30);
+
+    for (let i = 0; i < 42; i++) {
+      document.getElementById(i).style.backgroundColor = "";
+    }
+  };
   return (
     <header>
       <button>MENU</button>
@@ -10,7 +27,7 @@ function Header() {
         <div className="yellow" />
         <div className="red" />
       </div>
-      <button>RESTART</button>
+      <button onClick={() => resetBoard()}>RESTART</button>
     </header>
   );
 }

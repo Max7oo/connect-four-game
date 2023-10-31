@@ -1,18 +1,42 @@
 .playboard {
     grid-area: board;
 
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    column-gap: 15px;
-    row-gap: 15px;
+    position: relative;
 
     background-color: var(--text);
     border-radius: var(--border-radius);
     border: var(--border);
     box-shadow: var(--border-shadow);
-
+    
     padding: 25px 25px 100px 25px;
+}
+
+.markers {
+    position: absolute;
+    width: calc(100% - 50px);
+    top: -50px;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 15px;
+}
+
+.marker {
+    aspect-ratio: 1;
+    margin: 0 auto;
+    visibility: hidden;
+}
+
+.marker img {
+    width: 100%;
+}
+
+.cells {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
 }
 
 .cell {
