@@ -1,0 +1,35 @@
+.menu {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: 100;
+}
+
+.menu-modal {
+    background-color: var(--text);
+    border-radius: var(--border-radius);
+    border: var(--border);
+    box-shadow: var(--border-shadow);
+
+    text-align: center;
+
+    padding: 50px 50px 50px 50px;
+}
+
+.menu-modal button {
+    display: block;
+    margin: 0 auto 25px auto;
+
+    cursor: pointer;
+    border: var(--border);
+}
+

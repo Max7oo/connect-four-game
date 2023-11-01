@@ -48,3 +48,7 @@
     border: var(--border);
     box-shadow: inset 0px 10px black;
 }
+
+.cell:hover {
+    cursor: pointer;
+}

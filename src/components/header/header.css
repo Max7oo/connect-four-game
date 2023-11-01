@@ -9,26 +9,6 @@ header {
     margin: 50px 0px 75px 0px;
 }
 
-header button {
-    color: var(--text);
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 25px;
-  
-    border: 0;
-    border-radius: var(--border-radius);
-  
-    background-color: var(--dark-bg);
-    border: 5px solid transparent;
-    box-shadow: 0px 5px transparent;
-  }
-  
-header button:hover {
-    cursor: pointer;
-    border: var(--border);
-    box-shadow: 0px 10px black;
-}
-
 header button:first-child {
     grid-area: menu;
     justify-self: end;

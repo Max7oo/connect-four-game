@@ -2,9 +2,9 @@ import "./player.css";
 
 import yellow from "../../images/yellow-smiley.svg";
 
-function PlayerTwo({ setPlayer, scoreTwo }) {
+function PlayerTwo({ scoreTwo }) {
   return (
-    <div className="player two" onClick={() => setPlayer(2)}>
+    <div className="player two">
       <div className="smiley yellow">
         <img src={yellow} alt="yellow smiley" />
       </div>

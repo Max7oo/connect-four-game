@@ -5,6 +5,8 @@ import Playboard from "../../components/playboard/playboard";
 import PlayerOne from "../../components/player/playerone";
 import PlayerTwo from "../../components/player/playertwo";
 import "./home.css";
+import Winner from "../../components/winner/winner";
+import Menu from "../../components/menu/menu";
 
 function Home() {
   const [boardMemory, setBoardMemory] = useState([
@@ -20,12 +22,19 @@ function Home() {
   const [seconds, setSeconds] = useState(30);
   const [scoreOne, setScoreOne] = useState(0);
   const [scoreTwo, setScoreTwo] = useState(0);
+  const [winner, setWinner] = useState(0);
+  const [menu, setMenu] = useState(false);
 
   return (
     <>
-      <Header setBoardMemory={setBoardMemory} setSeconds={setSeconds} />
+      <Header
+        setMenu={setMenu}
+        setBoardMemory={setBoardMemory}
+        setSeconds={setSeconds}
+      />
+      <Menu menu={menu} setMenu={setMenu} />
       <main>
-        <PlayerOne setPlayer={setPlayer} scoreOne={scoreOne} />
+        <PlayerOne scoreOne={scoreOne} />
         <Playboard
           boardMemory={boardMemory}
           setBoardMemory={setBoardMemory}
@@ -36,8 +45,9 @@ function Home() {
           setScoreOne={setScoreOne}
           scoreTwo={scoreTwo}
           setScoreTwo={setScoreTwo}
+          setWinner={setWinner}
         />
-        <PlayerTwo setPlayer={setPlayer} scoreTwo={scoreTwo} />
+        <PlayerTwo scoreTwo={scoreTwo} />
       </main>
       <Footer
         player={player}
@@ -45,6 +55,16 @@ function Home() {
         seconds={seconds}
         setSeconds={setSeconds}
       />
+      {winner !== 0 ? (
+        <Winner
+          winner={winner}
+          setWinner={setWinner}
+          setPlayer={setPlayer}
+          setSeconds={setSeconds}
+        />
+      ) : (
+        <></>
+      )}
     </>
   );
 }
